@@ -5,12 +5,12 @@
 class Awsp < Formula
   desc "Easily switch between AWS Profiles with an interactive selector"
   homepage "https://github.com/abyss/go-awsp"
-  version "1.1.2"
+  version "1.1.3"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/abyss/go-awsp/releases/download/v1.1.2/go-awsp_Darwin_x86_64.tar.gz"
-      sha256 "e9cdcc3e6ad7ec3ea44e6e8cf36c9d093aece719297c1abcd4a1c326912a2e98"
+      url "https://github.com/abyss/go-awsp/releases/download/v1.1.3/go-awsp_Darwin_x86_64.tar.gz"
+      sha256 "d71374fd66a5f2a819f0e37a5be71f83dbef8e79953a20ff976d5a0b3ddab81e"
 
       define_method(:install) do
         bin.install "awsp"
@@ -19,8 +19,8 @@ class Awsp < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/abyss/go-awsp/releases/download/v1.1.2/go-awsp_Darwin_arm64.tar.gz"
-      sha256 "32c159139609f94eb391ea1da44af2c31864e7c4fa5255803e71ab9c527602a3"
+      url "https://github.com/abyss/go-awsp/releases/download/v1.1.3/go-awsp_Darwin_arm64.tar.gz"
+      sha256 "b68f0bf2decee3371ef23c217752076455e483b7a11c033b2e6ed65558d545b4"
 
       define_method(:install) do
         bin.install "awsp"
@@ -32,8 +32,8 @@ class Awsp < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/abyss/go-awsp/releases/download/v1.1.2/go-awsp_Linux_x86_64.tar.gz"
-      sha256 "4b75858ceedd35018ffce34df5ea617698665fad8e31699f5615a8169eec95a7"
+      url "https://github.com/abyss/go-awsp/releases/download/v1.1.3/go-awsp_Linux_x86_64.tar.gz"
+      sha256 "2767048089fec076bb164dccf385ae06cd915b57e209f568d06a600ab0328095"
       define_method(:install) do
         bin.install "awsp"
         prefix.install "_source-awsp.sh"
@@ -41,8 +41,8 @@ class Awsp < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/abyss/go-awsp/releases/download/v1.1.2/go-awsp_Linux_arm64.tar.gz"
-      sha256 "0012c12435af61b443c46b3405a3c63d8773f75e312708ea42843e672043d35f"
+      url "https://github.com/abyss/go-awsp/releases/download/v1.1.3/go-awsp_Linux_arm64.tar.gz"
+      sha256 "eaf08ce36a9b3f7b62604213476b729d6873aa16eba4c2d9201963509bfd39bf"
       define_method(:install) do
         bin.install "awsp"
         prefix.install "_source-awsp.sh"
