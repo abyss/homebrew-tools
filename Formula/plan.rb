@@ -5,20 +5,20 @@
 class Plan < Formula
   desc "Plan Journal CLI - Manage daily plan files organized by month"
   homepage "https://github.com/abyss/plan-journal-cli"
-  version "1.0.1"
+  version "1.0.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/abyss/plan-journal-cli/releases/download/v1.0.1/plan-journal-cli_Darwin_x86_64.tar.gz"
-      sha256 "862ede1dc6676e1ddcf7ce115206d8b6a30070d1f7241016b88b33bedf87fa34"
+      url "https://github.com/abyss/plan-journal-cli/releases/download/v1.0.2/plan-journal-cli_Darwin_x86_64.tar.gz"
+      sha256 "890f825b3bdc533865a2ee9059408574dbbadd790d8aa60da96511cff911398b"
 
       define_method(:install) do
         bin.install "plan"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/abyss/plan-journal-cli/releases/download/v1.0.1/plan-journal-cli_Darwin_arm64.tar.gz"
-      sha256 "e69cd05a5c2853791d1f830b896ccb658b4c691248de706f8e5b268f53f96c4a"
+      url "https://github.com/abyss/plan-journal-cli/releases/download/v1.0.2/plan-journal-cli_Darwin_arm64.tar.gz"
+      sha256 "4ce8c3dc2c83ef02a44504d65367b0707574fc1aeaf781d0fee204cd619e5c11"
 
       define_method(:install) do
         bin.install "plan"
@@ -28,15 +28,15 @@ class Plan < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/abyss/plan-journal-cli/releases/download/v1.0.1/plan-journal-cli_Linux_x86_64.tar.gz"
-      sha256 "edaf15ffb9e1545efa1670b56db258daea07221f7348fe5d3d60ceb7c3dbd7a0"
+      url "https://github.com/abyss/plan-journal-cli/releases/download/v1.0.2/plan-journal-cli_Linux_x86_64.tar.gz"
+      sha256 "97a2eed45015ec9dd57b3866fcbb66cfee179d64e9fde7434b40638ef242363b"
       define_method(:install) do
         bin.install "plan"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/abyss/plan-journal-cli/releases/download/v1.0.1/plan-journal-cli_Linux_arm64.tar.gz"
-      sha256 "b4f89573b70c5ff358adae8517d175122ba70b8eb04f2a9052709eb0ca724fae"
+      url "https://github.com/abyss/plan-journal-cli/releases/download/v1.0.2/plan-journal-cli_Linux_arm64.tar.gz"
+      sha256 "4ebb6ff352835aaa4788539c973c516dd1a7d416f99f1562e526667218dbc00c"
       define_method(:install) do
         bin.install "plan"
       end
