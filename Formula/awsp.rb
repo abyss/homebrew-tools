@@ -5,23 +5,25 @@
 class Awsp < Formula
   desc "Easily switch between AWS Profiles with an interactive selector"
   homepage "https://github.com/abyss/go-awsp"
-  version "1.0.2"
+  version "1.1.0"
 
   on_macos do
-    on_intel do
-      url "https://github.com/abyss/go-awsp/releases/download/v1.0.2/go-awsp_Darwin_x86_64.tar.gz"
-      sha256 "2bd7d6df31c9f9326f0c211f399ca014ef7142241bf5df497510adf35fcc1fdc"
+    if Hardware::CPU.intel?
+      url "https://github.com/abyss/go-awsp/releases/download/v1.1.0/go-awsp_Darwin_x86_64.tar.gz"
+      sha256 "6bdaf11bb1acf3f8c0c473b9e08606ab9fb55c76d4c4fe293fb34ceef0ddb29f"
 
-      def install
+      define_method(:install) do
+        prefix.install "awsp"
         prefix.install "_source-awsp.sh"
         bin.install "go-awsp"
       end
     end
-    on_arm do
-      url "https://github.com/abyss/go-awsp/releases/download/v1.0.2/go-awsp_Darwin_arm64.tar.gz"
-      sha256 "cb05a8fe9f41cc29919f0f61d9bd9327539c1e31146700db26e48fe821ad5ae9"
+    if Hardware::CPU.arm?
+      url "https://github.com/abyss/go-awsp/releases/download/v1.1.0/go-awsp_Darwin_arm64.tar.gz"
+      sha256 "3e77ae34dd08e07adfaeee66cdd2c8f661d6a2c4f60635834a9c23c652ba9eba"
 
-      def install
+      define_method(:install) do
+        prefix.install "awsp"
         prefix.install "_source-awsp.sh"
         bin.install "go-awsp"
       end
@@ -29,26 +31,22 @@ class Awsp < Formula
   end
 
   on_linux do
-    on_intel do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/abyss/go-awsp/releases/download/v1.0.2/go-awsp_Linux_x86_64.tar.gz"
-        sha256 "c5c131ee09ca16de56d16becfe71b9726ae074e7ae77aaa63cb20f3f2533c988"
-
-        def install
-          prefix.install "_source-awsp.sh"
-          bin.install "go-awsp"
-        end
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/abyss/go-awsp/releases/download/v1.1.0/go-awsp_Linux_x86_64.tar.gz"
+      sha256 "5ea86b0fc2b82dd82ab1cb96461589808bc915310ad87d52c5a68b082092d847"
+      define_method(:install) do
+        prefix.install "awsp"
+        prefix.install "_source-awsp.sh"
+        bin.install "go-awsp"
       end
     end
-    on_arm do
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/abyss/go-awsp/releases/download/v1.0.2/go-awsp_Linux_arm64.tar.gz"
-        sha256 "b7ee0ff7e4a28724182baf754a36c0f59b7f2b0aff1cd485d880ba968bdcb089"
-
-        def install
-          prefix.install "_source-awsp.sh"
-          bin.install "go-awsp"
-        end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/abyss/go-awsp/releases/download/v1.1.0/go-awsp_Linux_arm64.tar.gz"
+      sha256 "790c71006f4137bbf63f66a1bb87b2e4bbaf2468a09709962ef8a2cf9fa80671"
+      define_method(:install) do
+        prefix.install "awsp"
+        prefix.install "_source-awsp.sh"
+        bin.install "go-awsp"
       end
     end
   end
@@ -58,7 +56,7 @@ class Awsp < Formula
       ##################################################################
 
       To use awsp, add the following to your shell profile:
-          alias awsp='source "$(brew --prefix awsp)/_source-awsp.sh"'
+          alias awsp='. awsp'
 
       ##################################################################
     EOS
