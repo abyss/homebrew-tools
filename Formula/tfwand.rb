@@ -5,20 +5,20 @@
 class Tfwand < Formula
   desc "tfwand — OpenTofu/Terraform utility toolkit"
   homepage "https://github.com/abyss/tfwand"
-  version "0.3.1"
+  version "0.4.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/abyss/tfwand/releases/download/v0.3.1/tfwand_Darwin_x86_64.tar.gz"
-      sha256 "734ba09c09a765dbbeef9752c77a92e1ed31c7340e64df1c7468d77aff17aac7"
+      url "https://github.com/abyss/tfwand/releases/download/v0.4.0/tfwand_Darwin_x86_64.tar.gz"
+      sha256 "7120b4d5b32d48c6f627a442e811a814a942b2deda6126f91a60f54317772ef5"
 
       define_method(:install) do
         bin.install "wand"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/abyss/tfwand/releases/download/v0.3.1/tfwand_Darwin_arm64.tar.gz"
-      sha256 "fe60e2c3070b71d1355b6000038b923b93a8e40eec4e55ff6ecd11586baf38fd"
+      url "https://github.com/abyss/tfwand/releases/download/v0.4.0/tfwand_Darwin_arm64.tar.gz"
+      sha256 "5609b7cdf5d44d911c88d2f7cc1270e7162445c530e41e35e9c6b7ac9156c635"
 
       define_method(:install) do
         bin.install "wand"
@@ -28,15 +28,15 @@ class Tfwand < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/abyss/tfwand/releases/download/v0.3.1/tfwand_Linux_x86_64.tar.gz"
-      sha256 "058859f86773947d84d2358acdf8a42483fcbe58c25d96aff4cbc356c82dfe2f"
+      url "https://github.com/abyss/tfwand/releases/download/v0.4.0/tfwand_Linux_x86_64.tar.gz"
+      sha256 "0dd223011b11373a84bac9909eae42dac7b3cfa4f270a8bec4fc9b766a443194"
       define_method(:install) do
         bin.install "wand"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/abyss/tfwand/releases/download/v0.3.1/tfwand_Linux_arm64.tar.gz"
-      sha256 "be193dc5ebca12fd141b609ee4f0e21bd97a3403b88745c5d7e3ec86677bd8bc"
+      url "https://github.com/abyss/tfwand/releases/download/v0.4.0/tfwand_Linux_arm64.tar.gz"
+      sha256 "d0935669798b1dd48c78f6ccbaaae7bb94efa0cea1c1703d6bf7f628b766f653"
       define_method(:install) do
         bin.install "wand"
       end
